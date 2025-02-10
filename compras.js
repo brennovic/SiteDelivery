@@ -44,3 +44,27 @@ function finalizarPedido() {
   localStorage.removeItem("cart"); // Limpa o carrinho após finalizar
   window.location.href = "index.html"; // Voltar para a página inicial ou outra de sua escolha
 }
+// Pegando o formulário do cartão
+const formCartao = document.getElementById("formCartao");
+
+formCartao.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const numeroCartao = document.getElementById("numeroCartao").value;
+    const nomeCartao = document.getElementById("nomeCartao").value;
+    const validadeCartao = document.getElementById("validadeCartao").value;
+    const cvvCartao = document.getElementById("cvvCartao").value;
+
+    const cartaoInfo = {
+        numeroCartao,
+        nomeCartao,
+        validadeCartao,
+        cvvCartao,
+    };
+
+    // Salva os dados do cartão no localStorage
+    localStorage.setItem("cartao", JSON.stringify(cartaoInfo));
+
+    alert("Cartão salvo com sucesso! 💳✅");
+    formCartao.reset();
+});

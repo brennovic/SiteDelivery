@@ -127,6 +127,56 @@ h2 {
     border-radius: 5px;
     font-size: 16px;
 }
+/* 📇 Container do Cartão */
+.container-cartao {
+    width: 40%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px; /* Espaçamento entre os containers */
+}
+
+.container-cartao h2 {
+    margin-bottom: 15px;
+}
+
+/* Inputs do Cartão */
+.container-cartao label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+.container-cartao input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilizando Validade e CVV */
+.cartao-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cartao-info div {
+    width: 48%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container-cartao {
+        width: 100%;
+    }
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {

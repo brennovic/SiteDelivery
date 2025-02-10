@@ -34,6 +34,26 @@
             <button type="submit" class="btn-finalizar">Salvar Localização</button>
         </form>
     </div>
+    <!-- Container de Pagamento -->
+<div class="container-form">
+    <h2>💳 Informações de Pagamento</h2>
+    <form id="formPagamento">
+        <label for="nomeCartao">Nome no Cartão:</label>
+        <input type="text" id="nomeCartao" name="nomeCartao" placeholder="Digite o nome impresso no cartão" required>
+
+        <label for="numeroCartao">Número do Cartão:</label>
+        <input type="text" id="numeroCartao" name="numeroCartao" placeholder="Digite o número do cartão" required maxlength="19">
+
+        <label for="validadeCartao">Validade:</label>
+        <input type="text" id="validadeCartao" name="validadeCartao" placeholder="MM/AA" required maxlength="5">
+
+        <label for="cvvCartao">CVV:</label>
+        <input type="text" id="cvvCartao" name="cvvCartao" placeholder="Digite o CVV" required maxlength="3">
+
+        <button type="submit" class="btn-finalizar">Salvar Cartão</button>
+    </form>
+</div>
+
 </div>
 
 <script src="compras.js"></script>
