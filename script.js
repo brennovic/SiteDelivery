@@ -1,4 +1,4 @@
-// Sample food data organized by category
+
 const foods = {
   lanches: [
     {
@@ -259,7 +259,8 @@ const foods = {
   ],
 };
 
-// Cart functionality
+//carrinho
+
 let cart = [];
 
 function updateCartCount() {
@@ -334,7 +335,10 @@ function renderCartItems() {
     .join("");
 }
 
-// Modal functionality
+
+
+
+
 const modal = document.getElementById("cartModal");
 const cartBtn = document.getElementById("cartBtn");
 const closeBtn = document.querySelector(".close");
@@ -436,3 +440,31 @@ function createFoodCard(food) {
 document.addEventListener("DOMContentLoaded", () => {
   renderFoodGrid();
 });
+
+document.getElementById("checkoutBtn").addEventListener("click", function() {
+  if (cart.length === 0) {
+    showNotification("Seu carrinho está vazio!");
+    return;
+  }
+
+  // Salvar o carrinho no localStorage antes de redirecionar
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Redirecionar para a página de compras
+  window.location.href = "Compras.html";
+});
+
+document.getElementById("formLocalizacao").addEventListener("submit", function(event) {
+  event.preventDefault(); // Evita o recarregamento da página
+
+  let endereco = document.getElementById("endereco").value;
+  let cidade = document.getElementById("cidade").value;
+  let cep = document.getElementById("cep").value;
+
+  if (endereco && cidade && cep) {
+      alert(`Localização salva!\nEndereço: ${endereco}\nCidade: ${cidade}\nCEP: ${cep}`);
+  } else {
+      alert("Por favor, preencha todos os campos.");
+  }
+});
+

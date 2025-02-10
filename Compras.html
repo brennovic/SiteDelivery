@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo da Compra</title>
+    <link rel="stylesheet" href="compras.css">
+</head>
+<body>
+<div class="containerP">
+    <!-- Resumo da Compra -->
+    <div class="container">
+        <h2>🛍️ Resumo da Compra</h2>
+        <div id="cartSummary"></div>
+        <div class="total">
+            <strong>Total: R$ <span id="finalTotal">0.00</span></strong>
+        </div>
+        <button class="btn-finalizar" onclick="finalizarPedido()">Confirmar Pedido</button>
+    </div>
+
+    <!-- Formulário de Localização -->
+    <div class="container-form">
+        <h2>📍 Informe sua Localização</h2>
+        <form id="formLocalizacao">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" required>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" placeholder="Digite seu CEP" required>
+
+            <button type="submit" class="btn-finalizar">Salvar Localização</button>
+        </form>
+    </div>
+</div>
+
+<script src="compras.js"></script>
+</body>
+</html>
