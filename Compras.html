@@ -7,54 +7,64 @@
     <link rel="stylesheet" href="compras.css">
 </head>
 <body>
-<div class="containerP">
-    <!-- Resumo da Compra -->
-    <div class="container">
-        <h2>🛍️ Resumo da Compra</h2>
-        <div id="cartSummary"></div>
-        <div class="total">
-            <strong>Total: R$ <span id="finalTotal">0.00</span></strong>
+    <nav class="navbar">
+        <div class="nav-container">
+          <a href="index.html" class="logo">Delivery DuZé</a>
+          <div class="nav-links"></div>
         </div>
-        <button class="btn-finalizar" onclick="finalizarPedido()">Confirmar Pedido</button>
-    </div>
+      </nav>
 
-    <!-- Formulário de Localização -->
-    <div class="container-form">
-        <h2>📍 Informe sua Localização</h2>
-        <form id="formLocalizacao">
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" required>
+      <div class="distance">
+        <div class="containerP">
+            <!-- Resumo da Compra -->
+            <div class="container">
+                <h2>🛍️ Resumo da Compra</h2>
+                <div id="cartSummary"></div>
+                <div class="total">
+                    <strong>Total: R$ <span id="finalTotal">0.00</span></strong>
+                </div>
+                <button class="btn-finalizar" onclick="finalizarPedido()">Confirmar Pedido</button>
+            </div>
+        
+            <!-- Formulário de Localização -->
+            <div class="container-form">
+                <h2>📍 Informe sua Localização</h2>
+                <form id="formLocalizacao">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" required>
+        
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
+        
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" placeholder="Digite seu CEP" required>
+        
+                    <button type="submit" class="btn-finalizar">Salvar Localização</button>
+                </form>
+            </div>
+            <!-- Container de Pagamento -->
+        <div class="container-form">
+            <h2>💳 Informações de Pagamento</h2>
+            <form id="formPagamento">
+                <label for="nomeCartao">Nome no Cartão:</label>
+                <input type="text" id="nomeCartao" name="nomeCartao" placeholder="Digite o nome impresso no cartão" required>
+        
+                <label for="numeroCartao">Número do Cartão:</label>
+                <input type="text" id="numeroCartao" name="numeroCartao" placeholder="Digite o número do cartão" required maxlength="19">
+        
+                <label for="validadeCartao">Validade:</label>
+                <input type="text" id="validadeCartao" name="validadeCartao" placeholder="MM/AA" required maxlength="5">
+        
+                <label for="cvvCartao">CVV:</label>
+                <input type="text" id="cvvCartao" name="cvvCartao" placeholder="Digite o CVV" required maxlength="3">
+        
+                <button type="submit" class="btn-finalizar">Salvar Cartão</button>
+            </form>
+        </div>
+        
+        </div>
+      </div>
 
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
-
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" placeholder="Digite seu CEP" required>
-
-            <button type="submit" class="btn-finalizar">Salvar Localização</button>
-        </form>
-    </div>
-    <!-- Container de Pagamento -->
-<div class="container-form">
-    <h2>💳 Informações de Pagamento</h2>
-    <form id="formPagamento">
-        <label for="nomeCartao">Nome no Cartão:</label>
-        <input type="text" id="nomeCartao" name="nomeCartao" placeholder="Digite o nome impresso no cartão" required>
-
-        <label for="numeroCartao">Número do Cartão:</label>
-        <input type="text" id="numeroCartao" name="numeroCartao" placeholder="Digite o número do cartão" required maxlength="19">
-
-        <label for="validadeCartao">Validade:</label>
-        <input type="text" id="validadeCartao" name="validadeCartao" placeholder="MM/AA" required maxlength="5">
-
-        <label for="cvvCartao">CVV:</label>
-        <input type="text" id="cvvCartao" name="cvvCartao" placeholder="Digite o CVV" required maxlength="3">
-
-        <button type="submit" class="btn-finalizar">Salvar Cartão</button>
-    </form>
-</div>
-
-</div>
 
 <script src="compras.js"></script>
 </body>
