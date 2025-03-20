@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delivery DuZé</title>
+    <title>Food Delivery</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <nav class="navbar">
       <div class="nav-container">
-        <a href="index.html" class="logo">Delivery DuZé</a>
+        <a href="index.html" class="logo">FoodDelivery</a>
         <div class="nav-links">
           <a href="index.html" class="active">Início</a>
+          <a href="pedidos.html">Meus Pedidos</a>
         </div>
         <div class="nav-icons">
           <button id="cartBtn" class="icon-btn">
             <span class="cart-count">0</span>
             🛒
           </button>
-          <a href="login.html" class="icon-btn">👤</a>
+          <!-- <a href="login.html" class="icon-btn">👤</a>-->
         </div>
       </div>
     </nav>
@@ -34,8 +35,10 @@
       </div>
 
       <div class="food-grid" id="foodGrid">
-        
-      </div> 
+        <!-- Food items will be added here dynamically -->
+      </div>
+
+      <!-- Cart Modal -->
       <div id="cartModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -44,11 +47,119 @@
           <div class="cart-total">
             <strong>Total: R$ <span id="cartTotal">0.00</span></strong>
           </div>
-          <button id="checkoutBtn" class="primary-btn"  >Finalizar Pedido</button>
+          <button id="checkoutBtn" class="primary-btn">Finalizar Pedido</button>
+        </div>
+      </div>
+
+      <!-- Orders Modal -->
+      <div id="ordersModal" class="modal">
+        <div class="modal-content">
+          <span class="close-orders">&times;</span>
+          <h2>Meus Pedidos</h2>
+          <div id="orderItems" class="orders-container"></div>
+        </div>
+      </div>
+
+      <!-- Checkout Modal -->
+      <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+          <span class="close-checkout">&times;</span>
+          <h2>Finalizar Pedido</h2>
+          <form id="checkoutForm" class="checkout-form">
+            <div class="form-group">
+              <h3>Endereço de Entrega</h3>
+              <input type="text" id="street" placeholder="Rua" required />
+              <input type="text" id="number" placeholder="Número" required />
+              <input
+                type="text"
+                id="neighborhood"
+                placeholder="Bairro"
+                required
+              />
+              <input type="text" id="city" placeholder="Cidade" required />
+            </div>
+            <div class="form-group">
+              <h3>Forma de Pagamento</h3>
+              <select id="paymentMethod" required>
+                <option value="">Selecione uma forma de pagamento</option>
+                <option value="credit">Cartão de Crédito</option>
+                <option value="debit">Cartão de Débito</option>
+                <option value="pix">PIX</option>
+                <option value="cash">Dinheiro</option>
+              </select>
+
+              <div id="cardFields" class="payment-fields hidden">
+                <input
+                  type="text"
+                  id="cardNumber"
+                  placeholder="Número do Cartão"
+                />
+                <input type="text" id="cardName" placeholder="Nome no Cartão" />
+                <div class="card-details">
+                  <input type="text" id="cardExpiry" placeholder="MM/AA" />
+                  <input type="text" id="cardCVV" placeholder="CVV" />
+                </div>
+              </div>
+
+              <div id="pixFields" class="payment-fields hidden">
+                <p>Chave PIX: fooddelivery@exemplo.com</p>
+                <p>Envie o comprovante para o número (11) 99999-9999</p>
+              </div>
+
+              <div id="cashFields" class="payment-fields hidden">
+                <input
+                  type="text"
+                  id="cashChange"
+                  placeholder="Troco para quanto?"
+                />
+              </div>
+            </div>
+
+            <div class="checkout-summary">
+              <h3>Resumo do Pedido</h3>
+              <div id="checkoutItems"></div>
+              <div class="checkout-total">
+                <strong>Total: R$ <span id="checkoutTotal">0.00</span></strong>
+              </div>
+            </div>
+
+            <button type="submit" class="primary-btn">Confirmar Pedido</button>
+          </form>
         </div>
       </div>
     </main>
 
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Food Delivery</h3>
+          <p>Entregando felicidade em forma de comida desde 2023.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <p>Email: contato@fooddelivery.com</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
+        <div class="footer-section">
+          <h3>Horário de Funcionamento</h3>
+          <p>Segunda a Domingo: 10h às 23h</p>
+        </div>
+        <div class="footer-section">
+          <h3>Siga-nos</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">📱 Instagram</a>
+            <a href="#" class="social-link">👍 Facebook</a>
+            <a href="#" class="social-link">🐦 Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Food Delivery. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Required Lovable script tag -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script src="script.js"></script>
   </body>
 </html>
